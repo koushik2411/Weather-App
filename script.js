@@ -11,7 +11,7 @@ const weatherCard = document.getElementById("weatherCard");
 const searchBtn = document.getElementById("searchBtn");
 const locBtn = document.getElementById("locBtn");
 const cityName = document.getElementById("cityName");
-const date = document.getElementById("date");
+const dateText = document.getElementById("date");
 const mainTemp = document.getElementById("mainTemp");
 const conditionText = document.getElementById("conditionText");
 const humidityVal = document.getElementById("humidityVal");
@@ -39,8 +39,9 @@ const updateDropdownUI = () => {
     return;
   }
 
-  dropdown.innerHTML = cities.map(
-      city => `
+  dropdown.innerHTML = cities
+    .map(
+      (city) => `
         <div class="p-3 hover:bg-slate-700 cursor-pointer border-b border-slate-700 last:border-none recent-item">
         ${city}
         </div>
@@ -48,6 +49,8 @@ const updateDropdownUI = () => {
     )
     .join("");
 };
+
+dateText.innerText = new Date().toDateString();
 
 // ERROR HANDLING
 const showError = (msg) => {
@@ -61,7 +64,7 @@ cityInput.addEventListener("focus", updateDropdownUI);
 cityInput.addEventListener("click", () => dropdown.classList.toggle("hidden"));
 
 // FETCH API
-const fetchWeather = async (MediaQueryList, isCoords = false) => {
+const fetchWeather = async (query, isCoords = false) => {
   const baseUrl = "https://api.openweathermap.org/data/2.5";
   const url = isCoords
     ? `${baseUrl}/weather?lat=${query.lat}&lon=${query.lon}&units=metric&appid=${apiKey}`
@@ -162,14 +165,14 @@ const displayForecast = (days) => {
 
     // Cards
     container.innerHTML += `
-            <div class="bg-white/5 border border-white/10 p-4 rounded-2xl text-center hover:bg-white/10 transition-all">
-                <p class="text-xs text-slate-400 font-medium">${date}</p>
-                <img src="${iconUrl}" alt="weather" class="w-12 h-12 mx-auto my-2">
-                <p class="text-xl font-bold">${Math.round(day.main.temp)}°C</p>
-                <div class="flex flex-col gap-1 mt-3 text-[10px] text-slate-300">
-                    <span><i class="fas fa-wind mr-1"></i>${day.wind.speed}km/h</span>
-                    <span><i class="fas fa-tint mr-1"></i>${day.main.humidity}%</span>
-                </div>
+            <div class=" w-[30vw] md:w-[13vw] bg-[#ffffff4d] boxShadow p-4 rounded-2xl text-center hover:scale-[1.07] hover:bg-[#ffffff7d] transition-all">
+            <p class="text-xs text-slate-700 font-medium">${date}</p>
+            <img src="${iconUrl}" alt="weather" class="w-12 h-12 mx-auto my-2">
+            <p class="text-xl font-bold">${Math.round(day.main.temp)}°C</p>
+            <div class="flex flex-col gap-1 mt-3 text-[10px] text-slate-800">
+            <span><i class="fas fa-wind mr-1"></i>${day.wind.speed}km/h</span>
+            <span><i class="fas fa-tint mr-1"></i>${day.main.humidity}%</span>
+            </div>
             </div>
         `;
   });
