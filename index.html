@@ -1,14 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link href="./output.css" rel="stylesheet">
-</head>
-<body>
+    <link href="/src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="">
+
     <!--   HEADER start   -->
+    <header class=" border-b p-2 px-3 flex justify-between">
+      <h3 class="font-bold text-2xl">Weather App</h3>
+
+      <button class="bg-transparent lg:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
     <!--   HEADER end-->
-    
-</body>
+
+    <div class=" flex flex-col items-center">
+      <!--  USER INPUT SECTION start   -->
+      <main class=" py-5 w-[85vw] p-2 flex flex-col lg:flex-row gap-3 items-center justify-center">
+        <!--   Input  -->
+        <input
+          type="text"
+          placeholder="Enter a city name"
+          id="inputBox"
+          class=" border p-3 rounded-lg w-[60vw] outline-slate-100 boxShadow"
+        />
+
+        <!--  Buttons   -->
+        <div class=" flex gap-2">
+          <button id="searchBtn" class=" p-2 text-xl px-2.5 onHover onActive transition-all bg-blue-600 rounded-lg text-slate-100">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </button>
+
+          <button id="locBtn" class=" p-2 text-xl px-2.5 onHover onActive transition-all bg-green-600 rounded-lg text-slate-100">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+        </div>
+      </main>
+      <!--  USER INPUT SECTION end   -->
+
+    </div>
+  </body>
 </html>
