@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/*   CUSTOM STYLE CLASSES   */
+.onHover:hover {
+    scale: 1.09;
+    transition: all 0.25s ease;
+}
+
+.onActive:active {
+    scale: 0.95;
+    transition: all 0.25s ease;
+}
+
+.boxShadow {
+    box-shadow: -1px 1px 4px var(--color-slate-400);
+}
+
+/*   ELEMENT STYLES   */
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://res.cloudinary.com/dcfjexbss/image/upload/v1774269803/vecteezy_green-meadow-with-flowers-and-blue-sky-with-white-clouds_32735560_eccibf.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(6px);
+}
+
+
