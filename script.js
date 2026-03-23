@@ -42,7 +42,7 @@ const updateDropdownUI = () => {
   dropdown.innerHTML = cities
     .map(
       (city) => `
-        <div class="p-3 hover:bg-slate-700 cursor-pointer border-b border-slate-700 last:border-none recent-item">
+        <div class="p-3 hover:bg-slate-100 rounded-xl cursor-pointer border-b last:border-none recent-item">
         ${city}
         </div>
         `,
@@ -55,8 +55,8 @@ dateText.innerText = new Date().toDateString();
 // ERROR HANDLING
 const showError = (msg) => {
   errorText.innerText = msg;
-  errorDiv.classList.remove("translate-y-20");
-  setTimeout(() => errorDiv.classList.add("translate-y-20"), 3000);
+  errorDiv.classList.remove("opacity-0");
+  setTimeout(() => errorDiv.classList.add("opacity-1"), 4000);
 };
 
 // EVENT LISTENERS
