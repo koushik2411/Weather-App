@@ -128,6 +128,7 @@ const displayCurrentWeather = (data) => {
   mainTemp.innerText = `${Math.round(data.main.temp)}°C`;
   humidityVal.innerText = `${data.main.humidity}%`;
   windVal.innerText = `${data.wind.speed} km/h`;
+  feelVal.innerText = `${Math.round(data.main.temp)}°C`;
   conditionText.innerText = data.weather[0].main;
 };
 
