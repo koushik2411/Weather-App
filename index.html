@@ -13,7 +13,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="">
+  <body class=" text-slate-800">
 
     <!--   HEADER start   -->
     <header class=" border-b p-2 px-3 flex justify-between">
@@ -25,30 +25,78 @@
     </header>
     <!--   HEADER end-->
 
-    <div class=" flex flex-col items-center">
+    <main class=" w-full flex flex-col items-center">
       <!--  USER INPUT SECTION start   -->
-      <main class=" py-5 w-[85vw] p-2 flex flex-col lg:flex-row gap-3 items-center justify-center">
+      <section class=" py-5 w-[95vw] p-2 flex flex-col lg:flex-row gap-3 items-center justify-center">
         <!--   Input  -->
         <input
           type="text"
           placeholder="Enter a city name"
           id="inputBox"
-          class=" border p-3 rounded-lg w-[60vw] outline-slate-100 boxShadow"
+          class=" border border-slate-100 bg-[#ffffff2d] p-3 rounded-lg w-[65vw] outline-slate-100 boxShadow focus:scale-[1.1] transition-all"
         />
 
         <!--  Buttons   -->
         <div class=" flex gap-2">
-          <button id="searchBtn" class=" p-2 text-xl px-2.5 onHover onActive transition-all bg-blue-600 rounded-lg text-slate-100">
+          <button id="searchBtn" class=" p-2 text-xl px-2.5 onHover onActive transition-all bg-blue-600 rounded-lg text-slate-100 boxShadow">
             <i class="fa-solid fa-magnifying-glass-location"></i>
           </button>
 
-          <button id="locBtn" class=" p-2 text-xl px-2.5 onHover onActive transition-all bg-green-600 rounded-lg text-slate-100">
+          <button id="locBtn" class=" p-2 text-xl px-2.5 onHover onActive transition-all bg-green-600 rounded-lg text-slate-100 boxShadow">
             <i class="fa-solid fa-location-dot"></i>
           </button>
         </div>
-      </main>
+      </section>
       <!--  USER INPUT SECTION end   -->
 
-    </div>
+      <!--   MAIN WEATHER DISPLAY SECTION start-->
+         <section id="weatherCard" class=" w-[78vw] p-3 bg-[#ffffff2d] flex flex-col items-center rounded-3xl boxShadow">
+
+            <!--   upper section   -->
+            <main class="pb-4 flex flex-col gap-7 justify-between items-center">
+                <article class="">
+                    <h2 id="cityName" class=" text-3xl font-semibold">
+                    Jamshedpur
+                    </h2>
+
+                    <p id="date" class=" font-semibold text-slate-700">
+                        23 March
+                    </p>
+                </article>
+
+                <article class="">
+                    <i id="weather-icon" class="fas fa-cloud-sun text-7xl text-yellow-400"></i>
+
+                    <p id="conditionTxt" class="">Partly Cloudy</p>
+                </article>
+            </main>
+
+            <!--   lower section   -->
+            <main class=" grid grid-cols-3 gap-5 mt-5 border-t border-slate-800 pt-8">
+                <!--humidity-->
+                <article class="">
+                    <i class="fas fa-tint text-blue-400 mb-3 text-xl"></i>
+                    <p class="text-sm text-slate-700">Humidity</p>
+                    <p id="humidityVal" class="font-bold">65%</p>
+                </article>
+
+                <!--wind speed-->
+                <article class="">
+                    <i class="fas fa-wind text-blue-100 mb-3 text-xl"></i>
+                    <p class="text-sm text-slate-700">Wind</p>
+                    <p id="windVal" class="font-bold">12 km/h</p>
+                </article>
+
+                <!--feels like-->
+                <article class="">
+                    <i class="fas fa-thermometer-half text-red-400 mb-3 text-xl"></i>
+                    <p class="text-sm text-slate-700">Real Feel</p>
+                    <p id="feelVal" class="font-bold">26°C</p>
+                </article>
+            </main>
+         </section>
+      <!--   MAIN WEATHER DISPLAY SECTION end   -->
+
+    </main>
   </body>
 </html>
